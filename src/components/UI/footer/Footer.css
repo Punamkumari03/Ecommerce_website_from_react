@@ -1,0 +1,22 @@
+.footer{
+    height: 130px;
+    background-color: rgb(24, 161, 161);
+}
+.footerContent{
+    width: 50%;
+}
+.footerContent h2{
+    margin-top: 30px;
+    margin-left: 40px;
+    color: white;
+    font-size: 50px;
+}
+.footerIcon{
+    width: 50%;
+}
+.footerIcon i{
+    margin: 20px;
+    margin-top: 40px;
+    font-size: 30px;
+    color: white;
+}
