@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button, Modal } from "react-bootstrap";
 import CartItem from "./CartItem";
-import './Cart.css'
+import "./Cart.css";
+import CartContext from "../../context/cart-context";
 
-const cartElements = [
+const productsArr  = [
   {
     title: "Colors",
 
@@ -36,36 +37,54 @@ const cartElements = [
 ];
 
 const Cart = (props) => {
-  return <>
-    <Modal show={true} animation={false}>
+  const cartCtx = useContext(CartContext);
+  const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
+  const cartItemRemoveHandler = (id) => {};
+//   const cartItemAddHandler = (item) => {};
+  return (
+    <>
+      <Modal show={true} animation={false}>
         <Modal.Header>
-            <Modal.Title className="title">Cart</Modal.Title>
-            <Button onClick={props.onHideCart}><i class="fa-solid fa-xmark"></i></Button>
+          <Modal.Title className="title">Cart</Modal.Title>
+          <Button onClick={props.onHideCart}>
+            <i class="fa-solid fa-xmark"></i>
+          </Button>
         </Modal.Header>
-        <Modal.Body><div>
-        <div className="d-flex ">
-                        <p className="col-lg-6">ITEM</p>
-                        <p className="col-lg-3">PRICE</p>
-                        <p className="col-lg-3">QUANTITY</p>
+        <Modal.Body>
+          <div>
+            <div className="d-flex ">
+              <p className="col-lg-6">ITEM</p>
+              <p className="col-lg-3">PRICE</p>
+              <p className="col-lg-3">QUANTITY</p>
+            </div>
+            {/* cartCtx.items.map */}
+            {productsArr.map((data) => (
+              <CartItem
+                key={data.id}
+                title={data.title}
+                price={data.price}
+                quantity={data.quantity}
+                img={data.imageUrl}
+                onRemove={cartItemRemoveHandler.bind(null,data.id)}
 
-                    </div>
-                    {cartElements.map((data)=>(<CartItem title={data.title} price={data.price} quantity={data.quantity} img={data.imageUrl}></CartItem>))}
-                    <div className="d-flex justify-content-end">
-                        <h3>Total : $ 100</h3>
-                    </div>
-       
-        </div>
+              ></CartItem>
+            ))}
+            <div className="d-flex justify-content-end">
+              <h3>Total : {totalAmount}</h3>
+            </div>
+          </div>
         </Modal.Body>
         <Modal.Footer>
-        <Button variant="secondary" onClick={props.onHideCart}>
-                Close
-            </Button>
-            <Button variant="success" onClick={props.onHideCart}>
-                Purchase
-            </Button>  
+          <Button variant="secondary" onClick={props.onHideCart}>
+            Close
+          </Button>
+          <Button variant="success" onClick={props.onHideCart}>
+            Purchase
+          </Button>
         </Modal.Footer>
-    </Modal>
-  </>;
+      </Modal>
+    </>
+  );
 };
 
 export default Cart;

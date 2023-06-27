@@ -3,6 +3,12 @@ import { Button, Card } from 'react-bootstrap'
 import './StoreCard.css'
 
 const StoreCard = (props) => {
+  const submitHandler = event =>{
+    event.preventDefault();
+    props.onAddToCart(props.id,1)
+
+
+  }
   return (
     <Card  className='cards'>
         <Card.Body>
@@ -11,7 +17,7 @@ const StoreCard = (props) => {
             <Card.Img varent="top" src={props.img} />
             <br/>
             <Card.Text>${props.price}</Card.Text>
-            <Button variant='primary'>Add to Cart</Button>
+            <Button variant='primary' onClick={submitHandler}>Add to Cart</Button>
         </Card.Body>
     </Card>
   )
