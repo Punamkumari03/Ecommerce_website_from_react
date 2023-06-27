@@ -3,7 +3,7 @@ import { Button, Container, Nav, Navbar } from 'react-bootstrap'
 import './Header.css'
 import HeaderCartButton from './HeaderCartButton'
 
-const Header = () => {
+const Header = (props) => {
   return (
    <>
     <Navbar bg="dark" expand="sm" variant='dark'>
@@ -14,7 +14,7 @@ const Header = () => {
         <Nav.Link href='#about'>ABOUT</Nav.Link>
        </Nav>
        <div className='d-flex justify-content-end'>
-        <HeaderCartButton/>
+        <HeaderCartButton showCart={props.onShowCart}/>
        </div>
         </Container>
     </Navbar>
