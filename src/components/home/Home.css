@@ -1,0 +1,20 @@
+.head{
+    height: 180px;
+    width: 100%;
+    margin-top: -40px;
+    background-color: grey;
+}
+.head1 h2{
+    color: white;
+    padding: 15px;
+    border: 1px solid aqua;
+}
+.head1 i{
+    margin: 20px;
+    font-size: 60px;
+    font-weight: 100;
+    color: aqua;
+}
+.footer{
+    margin-top: 600px;
+}

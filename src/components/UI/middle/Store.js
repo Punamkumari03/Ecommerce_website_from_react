@@ -3,6 +3,7 @@ import StoreCard from "./StoreCard";
 import { Button } from "react-bootstrap";
 import CartContext from "../../../context/cart-context";
 import Header from "../header/Header";
+import Footer from "../footer/Footer";
 
 const productsArr = [
   {
@@ -72,6 +73,7 @@ const Store = (props) => {
         </div>
         <hr/>
       </div>
+      <Footer/>
     </>
   );
 };
