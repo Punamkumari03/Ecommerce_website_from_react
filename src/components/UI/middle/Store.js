@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import StoreCard from "./StoreCard";
 import { Button } from "react-bootstrap";
 import CartContext from "../../../context/cart-context";
+import Header from "../header/Header";
 
 const productsArr = [
   {
@@ -42,6 +43,7 @@ const productsArr = [
 ];
 
 const Store = (props) => {
+  <Header/>
   const ctx=useContext(CartContext)
   const addToCart = (id,amount)=>{
     ctx.addItem({

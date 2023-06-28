@@ -11,7 +11,7 @@ const Header = (props) => {
        <Nav className='me-auto d-flex justify-content-center nav'>
         <Nav.Link href='#home'>Home</Nav.Link>
         <Nav.Link href='#store'>STORE</Nav.Link>
-        <Nav.Link href='#about'>ABOUT</Nav.Link>
+        <Nav.Link href='/about'>ABOUT</Nav.Link>
        </Nav>
        <div className='d-flex justify-content-end'>
         <HeaderCartButton showCart={props.onShowCart}/>
