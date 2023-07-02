@@ -9,23 +9,37 @@ import About from "./components/about/About";
 import Home from "./components/home/Home";
 import RootLayout from "./components/UI/RootLayout";
 import Contact from "./components/Contact/Contact";
+import { Route } from "react-router-dom/cjs/react-router-dom.min";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <RootLayout />,
-    children: [
-      { path: "/home", element: <Home /> },
-      { path: "/about", element: <About /> },
-      { path: "/store", element: <Store /> },
-      {path:"/contact",element:<Contact/>}
-    ],
-  },
-]);
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <RootLayout />,
+//     children: [
+//       { path: "/home", element: <Home /> },
+//       { path: "/about", element: <About /> },
+//       { path: "/store", element: <Store /> },
+//       {path:"/contact",element:<Contact/>}
+//     ],
+//   },
+// ]);
 const App = () => {
   return (
     <CartProvider>
-      <RouterProvider router={router} />
+      <Header/>
+      <Route path='/store'>
+        <Store/>
+      </Route>
+      <Route path='/home'>
+        <Home/>
+      </Route>
+      <Route path='/about'>
+        <About/>
+      </Route>
+      <Route path='/contact'>
+        <Contact/>
+      </Route>
+      <Footer/>
     </CartProvider>
   );
 };

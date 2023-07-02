@@ -15,7 +15,7 @@ const RootLayout = () => {
     <>
       {cartShown && <Cart onHideCart={hideCartHandler}></Cart>}
    <Header onShowCart={showCartHandler}></Header>
-   <Outlet></Outlet>
+   {/* <Outlet></Outlet> */}
     </>
   )
 }

@@ -73,7 +73,7 @@ const Store = (props) => {
         </div>
         <hr/>
       </div>
-      <Footer/>
+     
     </>
   );
 };
