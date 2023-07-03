@@ -9,7 +9,8 @@ import About from "./components/about/About";
 import Home from "./components/home/Home";
 import RootLayout from "./components/UI/RootLayout";
 import Contact from "./components/Contact/Contact";
-import { Route } from "react-router-dom/cjs/react-router-dom.min";
+import { Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
+import ProductDetail from "./components/UI/middle/ProductDetail";
 
 // const router = createBrowserRouter([
 //   {
@@ -27,8 +28,12 @@ const App = () => {
   return (
     <CartProvider>
       <Header/>
+     
       <Route path='/store'>
         <Store/>
+      </Route>
+      <Route path='/product-detail'>
+        <ProductDetail/>
       </Route>
       <Route path='/home'>
         <Home/>
@@ -39,9 +44,11 @@ const App = () => {
       <Route path='/contact'>
         <Contact/>
       </Route>
+    
       <Footer/>
     </CartProvider>
   );
 };
 
 export default App;
+
