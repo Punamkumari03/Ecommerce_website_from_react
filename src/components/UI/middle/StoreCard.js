@@ -11,17 +11,20 @@ const StoreCard = (props) => {
 
   }
   return (
+    <Link to={'/store'+ props.id}>
     <Card  className='cards'>
         <Card.Body>
             <Card.Title className='text-center'>{props.title}</Card.Title>
             <br/>
-            <Link to='/product-detail'>
-            <Card.Img varent="top" src={props.img} /></Link>
+            
+            <Card.Img varent="top" src={props.img} />
             <br/>
             <Card.Text>${props.price}</Card.Text>
+            
             <Button variant='primary' onClick={submitHandler}>Add to Cart</Button>
         </Card.Body>
     </Card>
+    </Link>
   )
 }
 
