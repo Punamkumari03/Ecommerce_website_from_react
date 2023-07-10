@@ -11,6 +11,7 @@ import RootLayout from "./components/UI/RootLayout";
 import Contact from "./components/Contact/Contact";
 import { Redirect, Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
 import ProductDetail from "./components/UI/middle/ProductDetail";
+import Login from "./components/login/Login";
 
 // const router = createBrowserRouter([
 //   {
@@ -50,6 +51,9 @@ const App = () => {
       </Route>
       <Route path='/about'>
         <About/>
+      </Route>
+      <Route path='/login'>
+        <Login/>
       </Route>
       <Route path='/contact'>
         <Contact/>
