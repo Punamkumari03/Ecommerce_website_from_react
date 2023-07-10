@@ -7,20 +7,20 @@ const Login = () => {
     const history = useHistory();
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
-  
- 
+
+
 const authCtx = useContext(AuthContext);
   const submitHandler = (e) =>{
     e.preventDefault()
     const enteredEmail = emailInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
-     
+
     fetch('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyC0sOTxJYtjGd21a0QZxblpUO-gi6r2eKI',{
         method:"POST",
         body:JSON.stringify({
             email:enteredEmail,
             password:enteredPassword,
-            returnSecureToken:true,
+            returnSecureToken: true,
         }),
         headers: {
             "Content-Type": "application/json",
@@ -69,4 +69,3 @@ const authCtx = useContext(AuthContext);
 }
 
 export default Login
-
