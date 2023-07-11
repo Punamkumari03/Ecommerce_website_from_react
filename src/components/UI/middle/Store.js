@@ -50,15 +50,15 @@ const productsArr = [
 const Store = (props) => {
   <Header />;
   const ctx = useContext(CartContext);
-  const addToCart = (id, amount) => {
-    ctx.addItem({
-      id: id,
-      title: productsArr.title,
-      price: productsArr.price,
-      amount: amount,
-      img: productsArr.imageUrl,
-    });
-  };
+  // const addToCart = (id, amount) => {
+  //   ctx.addItem({
+  //     id: id,
+  //     title: productsArr.title,
+  //     price: productsArr.price,
+  //     amount: amount,
+  //     img: productsArr.imageUrl,
+  //   });
+  // };
   return (
     <>
       <div className="music">
@@ -72,7 +72,7 @@ const Store = (props) => {
                   title={data.title}
                   price={data.price}
                   img={data.imageUrl}
-                  onAddToCart={addToCart}
+                  onAddToCart={ctx.addItem.bind(null,data)}
                   id={data.id}
                   reviews = {data.reviews}
                 />

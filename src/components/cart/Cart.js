@@ -38,7 +38,10 @@ const productsArr  = [
 
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
-  const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
+  const totalPrice = cartCtx.items.reduce((totalPrice,item) =>{
+    return totalPrice+item.price*item.quantity
+  },0)
+  const totalAmount = `$${totalPrice.toFixed(2)}`;
   const cartItemRemoveHandler = (id) => {};
 //   const cartItemAddHandler = (item) => {};
   return (
@@ -57,8 +60,8 @@ const Cart = (props) => {
               <p className="col-lg-3">PRICE</p>
               <p className="col-lg-3">QUANTITY</p>
             </div>
-            {/* cartCtx.items.map */}
-            {productsArr.map((data) => (
+            
+            {cartCtx.items.map((data) => (
               <CartItem
                 key={data.id}
                 title={data.title}
@@ -70,7 +73,7 @@ const Cart = (props) => {
               ></CartItem>
             ))}
             <div className="d-flex justify-content-end">
-              <h3>Total : {totalAmount}</h3>
+              <h3>Total : {totalPrice}</h3>
             </div>
           </div>
         </Modal.Body>

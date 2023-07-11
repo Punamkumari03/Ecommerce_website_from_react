@@ -13,6 +13,7 @@ import { Redirect, Route, Switch } from "react-router-dom/cjs/react-router-dom.m
 import ProductDetail from "./components/UI/middle/ProductDetail";
 import Login from "./components/login/Login";
 import AuthContext from "./context/auth-context";
+import ItemProvider from "./context/ItemProvider";
 
 // const router = createBrowserRouter([
 //   {
@@ -36,7 +37,8 @@ const App = () => {
       setCartShown(false)
     }
   return (
-    <CartProvider>
+    <ItemProvider>
+
             {cartShown && <Cart onHideCart={hideCartHandler}></Cart>}
    <Header onShowCart={showCartHandler}></Header>
       
@@ -45,7 +47,7 @@ const App = () => {
         <Redirect to='/home'/>
       </Route>
       <Route path='/store' exact>
-      <Store/>
+      {/* <Store/> */}
       {authCtx.isLoggedIn && <Store/> }
         {!authCtx.isLoggedIn && <Redirect to='/login' />}
       </Route>
@@ -69,7 +71,7 @@ const App = () => {
       </Switch>
     
       <Footer/>
-    </CartProvider>
+    </ItemProvider>
   );
 };
 

@@ -36,7 +36,8 @@ const authCtx = useContext(AuthContext);
         }
 
     }).then((data)=>{
-        authCtx.login(data.idToken);
+      // console.log(data)
+        authCtx.login(data.idToken,data.email);
         history.replace('/store')
     }).catch((err) =>{
         alert(err.message)
