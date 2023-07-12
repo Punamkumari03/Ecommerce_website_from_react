@@ -37,8 +37,8 @@ const App = () => {
       setCartShown(false)
     }
   return (
-    <ItemProvider>
-
+  //  <CartProvider>
+  <ItemProvider>
             {cartShown && <Cart onHideCart={hideCartHandler}></Cart>}
    <Header onShowCart={showCartHandler}></Header>
       
@@ -71,7 +71,10 @@ const App = () => {
       </Switch>
     
       <Footer/>
-    </ItemProvider>
+      </ItemProvider>
+      // </CartProvider>
+
+    
   );
 };
 

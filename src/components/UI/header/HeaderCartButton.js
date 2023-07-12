@@ -12,6 +12,7 @@ const HeaderCartButton = (props) => {
             <span>CART</span>
             <span>{numberOfCartItem}</span>
         </Button>
+        
     </>
   )
 }

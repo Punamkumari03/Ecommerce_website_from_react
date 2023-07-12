@@ -18,7 +18,7 @@ const Home = () => {
             <div className='d-flex flex-column align-items-center head'>
             <div className="head1 d-flex flex-column align-items-center"> 
                 <h2>Get our Latest Album</h2>
-                <i class="fa-regular fa-circle-play"></i>
+                <i className="fa-regular fa-circle-play"></i>
             </div>
             <br/>
             <br/>

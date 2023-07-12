@@ -41,8 +41,10 @@ const Cart = (props) => {
   const totalPrice = cartCtx.items.reduce((totalPrice,item) =>{
     return totalPrice+item.price*item.quantity
   },0)
-  const totalAmount = `$${totalPrice.toFixed(2)}`;
-  const cartItemRemoveHandler = (id) => {};
+  // const totalAmount = `$${cartCtx.totalPrice.toFixed(2)}`;
+  const cartItemRemoveHandler = (id) => {
+    cartCtx.removeItem(id);
+  };
 //   const cartItemAddHandler = (item) => {};
   return (
     <>
@@ -50,7 +52,7 @@ const Cart = (props) => {
         <Modal.Header>
           <Modal.Title className="title">Cart</Modal.Title>
           <Button onClick={props.onHideCart}>
-            <i class="fa-solid fa-xmark"></i>
+            <i className="fa-solid fa-xmark"></i>
           </Button>
         </Modal.Header>
         <Modal.Body>
@@ -68,7 +70,7 @@ const Cart = (props) => {
                 price={data.price}
                 quantity={data.quantity}
                 img={data.imageUrl}
-                onRemove={cartItemRemoveHandler.bind(null,data.id)}
+                onRemove={cartCtx.removeItem.bind(null,data)}
 
               ></CartItem>
             ))}
