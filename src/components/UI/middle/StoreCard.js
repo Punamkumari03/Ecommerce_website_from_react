@@ -11,7 +11,7 @@ const StoreCard = (props) => {
 
   }
   return (
-    <Link to={'/store'+ props.id}>
+    <Link to={'/store/'+ props.id}>
     <Card key={props.id} className='cards'>
         <Card.Body>
             <Card.Title className='text-center'>{props.title}</Card.Title>

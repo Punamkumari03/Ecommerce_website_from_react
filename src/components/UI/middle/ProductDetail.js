@@ -171,10 +171,13 @@ const productDetails = [
 
 const ProductDetail = () => {
   const params = useParams();
-  console.log(productDetails[0].reviews[0]);
+  // console.log(productDetails[0].reviews[0]);
+  // console.log(params.productID,'product id')
   return (
+  
     <>
       <br />
+      <h1>hello</h1>
       <ProductInfo
         id={productDetails[params.productID].id}
         reviews={productDetails[params.productID].reviews}

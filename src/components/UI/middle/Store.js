@@ -69,11 +69,12 @@ const Store = (props) => {
             <div className="d-flex justify-content-center flex-wrap">
               {productsArr.map((data) => (
                 <StoreCard
+                 id={data.id}
                   title={data.title}
                   price={data.price}
                   img={data.imageUrl}
                   onAddToCart={ctx.addItem.bind(null,data)}
-                  id={data.id}
+                 
                   reviews = {data.reviews}
                 />
               ))}
